@@ -1,0 +1,242 @@
+:root {
+
+  /* COLORS */
+  --clr-bg:      #000000;
+  --clr-cream:   #FAF3E6;
+  --clr-accent:  #DB654F;
+  --clr-muted:   #636161;
+
+
+  /* FONTS */
+  --font-heading:  'Archivo Black', sans-serif;
+  --font-subhead:  'Clash Grotesk Variable', sans-serif;
+  --font-body:     'Roboto Slab', serif;
+
+
+  /* FONT SIZES */
+  /* 16px */
+  --text-sm:   clamp(0.875rem, 1.2vw,  1rem);
+  /* 20px */
+  --text-md:   clamp(1rem,     1.5vw,  1.25rem);
+  /* 25px */
+  --text-lg:   clamp(1.25rem,  2vw,    1.5625rem);
+  /* 31px */
+  --text-xl:   clamp(1.5rem,   2.5vw,  1.9375rem);
+  /* 39px */
+  --text-2xl:  clamp(1.75rem,  3.2vw,  2.4375rem);
+  /* 49px */
+  --text-3xl:  clamp(2rem,     4vw,    3.0625rem);
+  /* 64px */
+  --text-4xl:  clamp(2.5rem,   5.5vw,  4rem);
+  /* 88px */
+  --text-5xl:  clamp(3rem,     7vw,    5.5rem);
+
+
+  /* SPACING */
+  --space-1:  0.5rem;    /*  8px */
+  --space-2:  1rem;      /* 16px */
+  --space-3:  1.5rem;    /* 24px */
+  --space-4:  2rem;      /* 32px */
+  --space-5:  2.5rem;    /* 40px */
+  --space-6:  3rem;      /* 48px */
+  --space-8:  4rem;      /* 64px */
+  --space-10: 5rem;      /* 80px */
+  --space-12: 6rem;      /* 96px */
+  --space-16: clamp(4rem,   8vw,  8rem);    /* 64–128px */
+  --space-20: clamp(6rem,   10vw, 12rem);   /* 96–192px */
+
+
+  /* LAYOUT */
+  --max-width:         1440px;
+  --container:         1280px;
+  --container-padding: clamp(1rem, 5vw, 4rem);
+
+
+  /* MISC */
+  --radius:     8px;
+  --border:     1px solid var(--clr-muted);
+  --transition: 250ms ease;
+
+}
+
+/*================================
+              misc
+================================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #000000;
+  font-family: var(--font-body);
+  color: var(--clr-cream);
+}
+
+/*================================
+              Header
+================================*/
+
+header {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 10vh;
+  position: fixed;
+}
+
+nav {
+  margin-left: var(--space-5);
+  max-width: clamp(200px, 90vw, 1300px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  padding: .5rem;
+  background: transparent;
+  border: none;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: .5rem;
+}
+
+.ham-line {
+  width: 2rem;
+  height: .15rem;
+  display: inline-block;
+  background: var(--clr-cream);
+  transition: all 1s ease;
+}
+
+nav h2 {
+  font-size: var(--text-2xl);
+  font-family: var(--font-subhead);
+  font-weight: 100;
+}
+
+.menu {
+  border-radius: 50%;
+  inset: 0;
+  position: fixed;
+  transform-origin: center;
+  transform: scale(0);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--clr-cream);
+}
+
+.hamburger.active .line-1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line-2 {
+  opacity: 0;
+}
+
+.hamburger.active .line-3 {
+  transform: rotate(-45deg) translate(8px, -10px);
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  font-family: var(--font-subhead);
+  font-size: var(--text-3xl);
+  color: var(--clr-bg);
+}
+
+/*====================
+      Hero
+=====================*/
+
+#hero {
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: -1;
+}
+
+.hero-container {
+  max-width: clamp( 200px, 90vw, 1300px);
+  width: 100%;
+  min-height: 90vh;
+  margin-top: var(--space-10);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-list {
+  text-align: right;
+  list-style: none;
+  font-weight: 100;
+}
+
+.hero-main-text {
+  margin-top: auto;
+}
+
+.hero-main-text h1 {
+  font-size: var(--text-5xl);
+  font-family: var(--font-heading);
+}
+
+.hero-main-text h1 span {
+  color: var(--clr-accent);
+}
+
+.hero-cta {
+  margin-top: var(--space-8);
+  align-self: end;
+  font-size: var(--text-lg);
+  font-family: var(--font-heading);
+  color: var(--clr-cream);
+  background: transparent;
+  border: none;
+}
+
+.hero-line {
+  height: 100vh;
+  width: 2px;
+  background-color: var(--clr-cream);
+  margin-right: var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .hero-line {
+    display: none;
+  }
+
+  nav {margin-left: 0;}
+}
