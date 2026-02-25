@@ -23,7 +23,7 @@
         </nav>
 
         <div class="menu">
-            <ul>
+            <ul data-splitting>
                 <li><a class="nav-item">Home</a></li>
                 <li><a class="nav-item">Gallery</a></li>
                 <li><a class="nav-item">About</a></li>
@@ -52,11 +52,12 @@
                     <li>Experience</li>
                 </ul>
 
-                <div class="hero-main-text">
+                <div class="hero-main-text" data>
                     <p>Inked Arts Professionally Done</p>
-
-                    <h1>MADE FROM SCRATCH.</h1>
-                    <h1>MADE FOR <span>You.</span></h1>
+                    <div class="hero-title" data-splitting>
+                        <h1>MADE FROM SCRATCH.</h1>
+                        <h1>MADE FOR <span class="h1-span">YOU.</span></h1>
+                    </div>
                 </div>
 
                 <button class="hero-cta">Book - Now &rarr;</button>
@@ -64,15 +65,114 @@
         </section>
 
         <section id="gallery">
+            <div class="gallery-container">
+                <div class="gallery-title">
+                    <h3 class="fade-in">Featured works</h3>
+
+                    <p class="fade-in">01</p>
+                </div>
+
+                <div class="gallery-row">
+                    <img src="" alt="">
+
+                    <div class="gallery-row-text">
+                        <p class="fade-in">BLACK - WORK</p>
+                        <p class="fade-in">CONTRAST</p>
+                        <p class="fade-in">DEPTH</p>
+                    </div>
+
+                    <img src="" alt="">
+                </div>
+
+                <div class="gallery-row">
+                    <img src="" alt="">
+
+                    <div class="gallery-row-text">
+                        <p class="fade-in">FINE - LINE</p>
+                        <p class="fade-in">PRECISION</p>
+                        <p class="fade-in">FLOW</p>
+                    </div>
+
+                    <img src="" alt="">
+                </div>
+            </div>
 
         </section>
 
         <section id="about">
+            <div class="about-container">
+                <div class="about-title">
+                        <p>02</p>
 
+                        <h2>
+                            <span>Exploring Art</span>
+                            <span>Through Tattooing</span>
+                        </h2>
+                </div>
+                <div class="about-text" data-splitting>
+                    Inked Arts is a custom tattoo studio with over 20 years
+                    of experience, focused on creating meaningful, one-of-a-kind 
+                    pieces in a clean, professional, and welcoming environment. We
+                    work closely with every client to turn their vision into lasting art.            
+                </div>
+            </div>
         </section>
 
         <section id="testimonial">
+            <div class="testimonial-container">
+                <div class="grid-colum1">
+                    <div class="testimonial">
+                        <h3>"</h3>
 
+                        <blockquote>
+                            My brother and I went in for a memorial tattoo for
+                            my daughter and Jacob was absolutely fantastic. He was able to 
+                            give us great advice on size and placement and he really did a wonderful job…
+                        </blockquote>
+
+                        <p>- V. Woods</p>
+                    </div>
+                </div>
+
+                <div class="grid-colum2">
+                    <div class="testimonial-title">
+                        <p>03</p>
+
+                        <h2>
+                            What Our
+                            Clients Say 
+                            About Us
+                        </h2>
+                    </div>
+
+                    <div class="testimonial">
+                        <h3>"</h3>
+
+                        <blockquote>
+                            Inked Arts is fabulous! No egos, artwork is stellar on 
+                            point and the staff is incredibly friendly and truly caring. 
+                            Chris Bowen is a fantastic artist and is intuitive on clients needs…
+                        </blockquote>
+
+                        <p>- K. Uber</p>
+                    </div>
+                </div>
+
+                <div class="grid-colum3">
+
+                    <div class="testimonial">
+                        <h3>"</h3>
+
+                        <blockquote>
+                            Chris does amazing work! I trust his work and he's got amazing 
+                            talent. His new shop is very clean and professional. I have and will 
+                            continue to highly recommend Inked Arts Tattoo!
+                        </blockquote>
+
+                        <p>- Julie B.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="artists">
@@ -90,6 +190,8 @@
         </section>
     </footer>
 
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="java.js"></script>
