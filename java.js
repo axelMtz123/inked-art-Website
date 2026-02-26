@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 Splitting ();
 
 gsap.from (".fade-in", {
@@ -39,7 +40,7 @@ menuTl.to (".ham-line", {
     duration: .5,
     stagger: .2,
     ease: "back.out",
-})
+}, "<")
 
 let isOpen = false;
 
@@ -73,7 +74,7 @@ gsap.to ("header", {
 
 gsap.from (".hero-title h1 .word", {
     opacity: 0,
-    x: -200,
+    y: 50,
     stagger: .5,
     duration: .5,
 })
@@ -105,7 +106,7 @@ heroCta.addEventListener("mouseleave", () => {
 ScrollTrigger.create ({
     trigger: "#about",
     start: "-=0",
-    end: "+=400",
+    end: "+=600",
     pin: true,
     onEnter: () => aboutTl.play(),
     onLeaveBack: () => aboutTl.reverse(),})
@@ -121,3 +122,88 @@ gsap.to (".about-text .word", {
         scrub: 1,
     }
 })
+
+/*==================
+    Testimonial
+====================*/ 
+
+const testimonials = [
+  {
+    element: document.querySelector(".quote-1"),
+    author: document.querySelector(".t-line-1 p"),
+    quotes: [
+      { quote: "Absolutely incredible work! The detail and precision are unmatched.", author: "– Alex T." },
+      { quote: "Friendly, professional, and the vibe in the studio is amazing.", author: "– Sam R." },
+      { quote: "The artist really listened to what I wanted and brought my vision to life.", author: "– Jamie L." }
+    ]
+  },
+  {
+    element: document.querySelector(".quote-2"),
+    author: document.querySelector(".t-line-2 p"),
+    quotes: [
+      { quote: "Second box first quote here.", author: "– Person A" },
+      { quote: "Second box second quote here.", author: "– Person B" },
+      { quote: "Second box third quote here.", author: "– Person C" }
+    ]
+  },
+  {
+    element: document.querySelector(".quote-3"),
+    author: document.querySelector(".t-line-3 p"),
+    quotes: [
+      { quote: "Third box first quote here.", author: "– Person X" },
+      { quote: "Third box second quote here.", author: "– Person Y" },
+      { quote: "Third box third quote here.", author: "– Person Z" }
+    ]
+  }
+];
+
+testimonials.forEach(({ element, author, quotes }) => {
+  const tl = gsap.timeline({ repeat: -1, defaults: { duration: 2, ease: "power1.inOut" } });
+
+  quotes.forEach((t) => {
+    tl.to([element, author], { opacity: 0 })
+    tl.add(() => {
+      element.innerHTML = t.quote
+      author.innerHTML = t.author
+    })
+    tl.to([element, author], { opacity: 1 })
+    tl.to({}, { duration: 4 })
+  });
+});
+
+const marquee = gsap.to(".marquee-track", {
+  x: "-50%",
+  duration: 30,
+  ease: "none",
+  repeat: -1,
+})
+
+const track = document.querySelector(".marquee-track")
+
+track.addEventListener("mouseenter", () => marquee.pause())
+track.addEventListener("mouseleave", () => marquee.play())
+
+/*====================
+    Artist
+======================*/
+
+const workBtns = document.querySelectorAll(".work-btn")
+
+workBtns.forEach(btn => btn.addEventListener("mouseenter", () => {
+    gsap.fromTo (btn, {
+        x: -10,
+        duration: .5,
+    }, {
+        x: 10,
+        duration: .5,
+        ease: "power1.inOut",
+        yoyo: true,
+        repeat: 6,
+    })
+
+}))
+
+workBtns.forEach(btn => btn.addEventListener("mouseleave", () => {
+    gsap.killTweensOf(btn);
+    gsap.to(btn, { x: 0, duration: 0.1 }); 
+}));
