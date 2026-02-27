@@ -251,3 +251,21 @@ closeBtn.addEventListener("click", () => {
 bg.addEventListener("click", () => {
     openTl.reverse()
 })
+
+/*===================
+    How It Works 
+=====================*/
+
+const stepCard = document.querySelectorAll(".step-cardInner")
+
+stepCard.forEach((card) => {
+    let isExpanded = false
+
+    card.addEventListener("click", () => {
+        isExpanded
+            ? gsap.to(card, {height: 80, duration: .5})
+            : gsap.to(card, {height: "auto", duration: .5})
+
+            isExpanded = !isExpanded
+    })
+})
