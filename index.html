@@ -210,14 +210,14 @@
                         </p>
                     </div>
 
-                    <button class="work-btn portfolio-1">
+                    <button class="work-btn" id="chris-btn">
                         <span class="btn-move">See work</span>
                         <span class="btn-arr">↗</span>
                     </button>
                 </div>
 
                 <div class="artists-content fade-in">
-                    <button class="work-btn portfolio-2">
+                    <button class="work-btn" id="jacob-btn">
                         <span class="btn-move">See work</span>
                         <span class="btn-arr">↗</span>
                     </button>
@@ -244,6 +244,16 @@
 
         </section>
     </footer>
+
+    <!--Portfolio Overlays-->
+    <div id="bg-overlay"></div>
+
+    <div class="portfolio-overlay" id="portfolio-overlay">
+
+        <button id="close-btn">X</button>
+
+        <iframe id="portfolio-frame" frameborder="0"></iframe>
+    </div>
 
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>

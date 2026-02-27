@@ -80,24 +80,28 @@ gsap.from (".hero-title h1 .word", {
 })
 
 const heroCta = document.querySelector (".hero-cta")
+const portfolioCta = document.querySelector (".portfolio-cta")
 
-heroCta.addEventListener ("mouseenter", () => {
-    gsap.fromTo (heroCta, {
-        x: -10,
-        duration: .5,
-    }, {
-        x: 10,
-        duration: .5,
-        ease: "power1.inOut",
-        yoyo: true,
-        repeat: 6,
+const bookNowBtn = [heroCta, portfolioCta].filter(Boolean)
+
+bookNowBtn.forEach(( btn ) => {
+    btn.addEventListener("mouseenter", () => {
+        gsap.fromTo(btn, {
+            x: -10,
+        }, {
+            x: 10,
+            duration: .5,
+            ease: "power1.inOut",
+            yoyo: true,
+            repeat: 6,
+        })
+    })
+
+    btn.addEventListener("mouseleave", () => {
+        gsap.killTweensOf(btn)
+        gsap.to(btn, { x: 0, duration: 0.1 })
     })
 })
-
-heroCta.addEventListener("mouseleave", () => {
-  gsap.killTweensOf(heroCta);
-  gsap.to(heroCta, { x: 0, duration: 0.1 }); 
-});
 
 /*==============
     about
@@ -207,3 +211,43 @@ workBtns.forEach(btn => btn.addEventListener("mouseleave", () => {
     gsap.killTweensOf(btn);
     gsap.to(btn, { x: 0, duration: 0.1 }); 
 }));
+
+
+/*==================
+    Portfolio
+====================*/
+
+const overlay = document.getElementById("portfolio-overlay")  
+const bg = document.getElementById("bg-overlay")             
+const closeBtn = document.getElementById("close-btn")        
+const portfolioFrame = document.getElementById("portfolio-frame")
+
+const artists = [
+    { btn: "chris-btn", page: "portfolio1.html" },
+    { btn: "jacob-btn", page: "portfolio2.html" },
+]
+
+const openTl = gsap.timeline({
+    paused: true,
+    defaults: { ease: "power3.inOut", duration: .6,}
+})
+
+openTl
+    .set ([overlay, bg], { visibility: "visible" })
+    .from (overlay, { opacity: 0, scale: 0.8 })
+    .to (bg, { opacity: 1 }, "<")
+
+artists.forEach(({ btn, page}) => {
+    document.getElementById(btn).addEventListener("click", () => {
+        portfolioFrame.src = page
+        openTl.play()
+    })
+})
+
+closeBtn.addEventListener("click", () => {
+    openTl.reverse()
+})
+
+bg.addEventListener("click", () => {
+    openTl.reverse()
+})
