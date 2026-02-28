@@ -291,3 +291,14 @@ gsap.from ("steps", {
         scrub: true,
     }
 })
+
+Splitting({ target: ".footer-title h1", by: "chars" })
+
+gsap.to (".footer-title h1 .char", {
+    color: "#FAF3E6",
+    stagger: .05,
+    ease: "power1.inOut",
+    yoyo: true,
+    repeat: -1,
+    duration: .5,
+})
