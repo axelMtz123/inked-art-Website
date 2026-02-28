@@ -67,6 +67,16 @@ gsap.to ("header", {
 })
 
 
+const navItems = document.querySelectorAll (".nav-item")
+
+navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+        menuTl.reverse()
+        hamburger.classList.remove("active")
+        isOpen = false
+    })
+})
+
 
 /*=============
     Hero
@@ -80,13 +90,9 @@ gsap.from (".hero-title h1 .word", {
 })
 
 const heroCta = document.querySelector (".hero-cta")
-const portfolioCta = document.querySelector (".portfolio-cta")
 
-const bookNowBtn = [heroCta, portfolioCta].filter(Boolean)
-
-bookNowBtn.forEach(( btn ) => {
-    btn.addEventListener("mouseenter", () => {
-        gsap.fromTo(btn, {
+    heroCta.addEventListener("mouseenter", () => {
+        gsap.fromTo(heroCta, {
             x: -10,
         }, {
             x: 10,
@@ -97,11 +103,16 @@ bookNowBtn.forEach(( btn ) => {
         })
     })
 
-    btn.addEventListener("mouseleave", () => {
-        gsap.killTweensOf(btn)
+    heroCta.addEventListener("mouseleave", () => {
+        gsap.killTweensOf(heroCta)
         gsap.to(btn, { x: 0, duration: 0.1 })
     })
-})
+
+    heroCta.addEventListener ("click", () => {
+        document.getElementById("how-it-works").scrollIntoView({
+            behavior: "smooth",
+        })
+    })
 
 /*==============
     about
@@ -227,12 +238,12 @@ const artists = [
     { btn: "jacob-btn", page: "portfolio2.html" },
 ]
 
-const openTl = gsap.timeline({
+window.openTl = gsap.timeline({
     paused: true,
     defaults: { ease: "power3.inOut", duration: .6,}
 })
 
-openTl
+window.openTl
     .set ([overlay, bg], { visibility: "visible" })
     .from (overlay, { opacity: 0, scale: 0.8 })
     .to (bg, { opacity: 1 }, "<")
@@ -268,4 +279,15 @@ stepCard.forEach((card) => {
 
             isExpanded = !isExpanded
     })
+})
+
+gsap.from ("steps", {
+    opacity: 0,
+    x: 100,
+    scrollTrigger: {
+        trigger: "#how-it-works",
+        start: "top 80%",
+        end: "bottom 10%",
+        scrub: true,
+    }
 })

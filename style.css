@@ -62,6 +62,10 @@
 /*================================
               misc
 ================================*/
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -905,7 +909,7 @@ footer {
 
 #how-it-works {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -921,19 +925,17 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-4);
-  border: 2px solid;
 }
 
 .steps {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  border: 2px solid;
 }
 
 .steps-title {
   font-size: var(--text-4xl);
-  line-height: 3rem;
+  line-height: 4rem;
   font-family: var(--font-subhead);
   margin-bottom: var(--space-4);
 }
@@ -943,6 +945,7 @@ footer {
 }
 
 .step-card {
+  width: 80%;
   display: flex;
   flex-direction: column;
   border-top: 2px solid;
@@ -981,10 +984,28 @@ footer {
   margin-right: auto;
 }
 
+.booking {
+  align-self: center;
+}
+
 .booking h4 {
   font-size: var(--text-md);
   font-weight: 200;
   margin-bottom: var(--space-4);
+  position: relative;
+  padding-bottom: .5rem;
+}
+
+.booking h4::after {
+  content: "";
+  display: block;
+  background-color: var(--clr-cream);
+  width: 100%;
+  height: 2px;
+  opacity: .5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 #booking-form {
@@ -998,10 +1019,10 @@ footer {
   border: 2px solid var(--clr-cream);
   padding: var(--space-1);
   border-radius: .5rem;
+  color: var(--clr-cream);
 }
 
 #booking-form input::placeholder, #booking-form textarea::placeholder {
-
   color: var(--clr-cream);
 }
 
@@ -1036,4 +1057,167 @@ footer {
   position: absolute;
   bottom: 0;
   left: 70%;
+}
+
+#booking-form select {
+  background: transparent;
+  border: 2px solid var(--clr-cream);
+  padding: var(--space-1);
+  border-radius: .5rem;
+  color: var(--clr-cream);
+}
+
+#booking-form select option {
+  background: var(--clr-bg);
+  border: none;
+  padding: var(--space-1);
+  color: var(--clr-cream);
+}
+
+.input-small {
+  width: 80%;
+}
+
+@media (max-width: 600px) {
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card {
+    width: 100%;
+  }
+
+  .step-card h4 {
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+}
+
+/*======================
+      Footer
+======================*/
+
+#index-footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-20);
+  position: relative;
+}
+
+#contact {
+  background-color: var(--clr-bg);
+  display: flex;
+  justify-content: center;
+  min-height: auto;
+  padding-top: var(--space-8);
+  width: 100%;
+  border-top: 2px solid var(--clr-muted);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  max-width: clamp( 200px, 90vw, 1300px);
+  width: 100%;
+  gap: var(--space-4);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact-info h4 {
+  font-size: var(--text-md);
+  position: relative;
+  padding-bottom: var(--space-1);
+}
+
+.contact-info h4::after {
+  content: "";
+  display: block;
+  background-color: var(--clr-cream);
+  width: 100%;
+  height: 2px;
+  opacity: .5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.contact-link h4 {
+  padding-right: var(--space-4);
+}
+
+.contact-link a {
+  position: relative;
+  padding-bottom: var(--space-1);
+}
+
+.contact-link a::after {
+  content: "";
+  display: block;
+  background-color: var(--clr-cream);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  opacity: .5;
+  bottom: 0;
+  right: 0;
+  transition: all .5s ease-in-out;
+  transform: scaleX(0);
+}
+
+.contact-link a:hover::after {
+  transform: scaleX(1);
+}
+
+.studio-hours{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  text-align: right;
+}
+
+.extra-info {
+  display: flex;
+  justify-content: space-between;;
+}
+
+.footer-title h1 {
+  font-size: clamp(2.5rem, 8vw, 10rem);
+  text-align: center;
+  font-family: var(--font-heading);
+  letter-spacing: 1rem;
+}
+
+#copyright {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-2);
+  border-top: 2px solid var(--clr-muted);
+}
+
+@media (max-width: 600px) {
+  .extra-info {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .footer-title h1 {
+    letter-spacing: 0.5rem;
+    margin-top: var(--space-4);
+  }
 }

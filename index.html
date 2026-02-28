@@ -24,17 +24,18 @@
 
         <div class="menu">
             <ul data-splitting>
-                <li><a class="nav-item">Home</a></li>
-                <li><a class="nav-item">Gallery</a></li>
-                <li><a class="nav-item">About</a></li>
-                <li><a class="nav-item">Booking</a></li>
-                <li><a class="nav-item">Testimonials</a></li>
-                <li><a class="nav-item">Contact</a></li>
+                <li><a href="#main" class="nav-item">Home</a></li>
+                <li><a href="#gallery" class="nav-item">Gallery</a></li>
+                <li><a href="#artists" class="nav-item">Artists</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#how-it-works" class="nav-item">Booking</a></li>
+                <li><a href="#testimonial" class="nav-item">Testimonials</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
             </ul>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section id="hero">
             <video autoplay muted loop class="bg-video">
                 <source src="assets/MOSHED-2026-2-19-12-57-47-ezgif.com-gif-to-mp4-converter (1).mp4" type="video/mp4">
@@ -286,11 +287,11 @@
                 <form id="booking-form" method="" action="">
                     <input type="text" name="name" placeholder="Your Name" required>
 
-                    <input type="tel" name="phone" placeholder="Your Phone">
+                    <input class="input-small" type="tel" name="phone" placeholder="Your Phone">
 
                     <input type="email" name="email" placeholder="Your Email" required>
 
-                    <textarea name="message" placeholder="Describe your tattoo idea"></textarea>
+                    <textarea class="input-small" name="message" placeholder="Describe your tattoo idea"></textarea>
 
                     <select name="artist">
                         <option value="">Select an Artist</option>
@@ -302,7 +303,7 @@
                         <option value="no-preference">No Preference</option>
                     </select>
 
-                    <button type="submit">
+                    <button class="work-btn" type="submit">
                         <span class="btn-move">See work</span>
                         <span class="btn-arr">↗</span>
                     </button>
@@ -311,9 +312,45 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="index-footer">
         <section id="contact">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-link">
+                        <h4>06 Contact</h4>
+                        
+                        <a href="">INSTAGRAM</a>
 
+                        <a href="">FACEBOOK</a>
+                    </div>
+
+                    <div class="studio-hours">
+                        <h4>Open Hours</h4>
+
+                        <p>Tuesday - Saturday</p>
+
+                        <p>10 AM - 6PM</p>
+                    </div>
+                </div>
+
+                <div class="footer-title">
+                    <div class="extra-info">
+                        <a href="">Phone number - 470-238-3859</a>
+
+                        <p>Address - building 100, suite 18 sugar hill, ga. 30518</p>
+
+                        <a href="">Email - inkedartstattoo@gmail.com</a>
+                    </div>
+
+                    <h1>INKED ARTS</h1>
+                </div>
+            </div>  
+        </section>
+
+        <section id="copyright">
+            <p>© 2026 Inked Arts Studio. All rights reserved. </p>
+
+            <p>website made by <a>Axel Martinez</a></p>
         </section>
     </footer>
 
