@@ -7,8 +7,7 @@ gsap.from (".fade-in", {
     stagger: .05,
     y: -20,
     scrollTrigger: {
-        start: "top 80%",
-        end: "bottom 10%",
+        start: "top 90%",
         scrub: true,
     }
 })
@@ -227,6 +226,10 @@ workBtns.forEach(btn => btn.addEventListener("mouseleave", () => {
 /*==================
     Portfolio
 ====================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("#portfolio-frame").src = "portfolio1.html"
+})
 
 const overlay = document.getElementById("portfolio-overlay")  
 const bg = document.getElementById("bg-overlay")             
