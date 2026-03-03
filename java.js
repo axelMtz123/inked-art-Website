@@ -155,18 +155,18 @@ const testimonials = [
     element: document.querySelector(".quote-2"),
     author: document.querySelector(".t-line-2 p"),
     quotes: [
-      { quote: "Second box first quote here.", author: "– Person A" },
-      { quote: "Second box second quote here.", author: "– Person B" },
-      { quote: "Second box third quote here.", author: "– Person C" }
+      { quote: "The detail and precision blew me away. From consultation to final session, everything felt professional. The design came out even better than I imagined", author: "– Marcus R." },
+      { quote: "Inked Art has an amazing atmosphere. Clean studio, talented artists, and they really listened to what I wanted. I’m beyond happy with my piece", author: "– Jenna M." },
+      { quote: "I came in with a rough idea and left with something way stronger. The shading and line work are next level. Definitely coming back", author: "– Carlos D." }
     ]
   },
   {
     element: document.querySelector(".quote-3"),
     author: document.querySelector(".t-line-3 p"),
     quotes: [
-      { quote: "Third box first quote here.", author: "– Person X" },
-      { quote: "Third box second quote here.", author: "– Person Y" },
-      { quote: "Third box third quote here.", author: "– Person Z" }
+      { quote: "Super professional and easy to work with. The booking process was smooth, and the final design felt perfectly placed and executed.", author: "– Alyssa K." },
+      { quote: "The attention to detail really stood out. Nothing felt rushed, and the final result looks bold and clean.", author: "– Jordan T." },
+      { quote: "Best tattoo experience I’ve had. Great vibe, clear communication, and a piece I’m proud to show off.", author: "– Brianna L." }
     ]
   }
 ];

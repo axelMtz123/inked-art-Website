@@ -246,18 +246,7 @@ nav h2 {
   padding: var(--space-1);
 }
 
-.hero-line {
-  height: 100vh;
-  width: 2px;
-  background-color: var(--clr-cream);
-  margin-right: var(--space-4);
-}
-
 @media (max-width: 600px) {
-  .hero-line {
-    display: none;
-  }
-
   nav {margin-left: 0;}
 }
 
@@ -322,9 +311,9 @@ nav h2 {
   max-height: clamp(20rem, 400px, 40rem);
   width: 100%;
   height: 100%;
-  background-color: var(--clr-muted);
   background-size: cover;
   background-position: center;
+  border-radius: 8px;
 }
 
 .gallery-row-text {
